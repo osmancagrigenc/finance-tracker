@@ -9,25 +9,7 @@ import {
   ArrowTrendingDownIcon,
   BanknotesIcon,
 } from '@heroicons/react/24/outline'
-
-interface DashboardStats {
-  totalBalance: number
-  monthlyIncome: number
-  monthlyExpense: number
-  activeAccounts: number
-  incomeChange: number
-  expenseChange: number
-  balanceChange: number
-}
-
-interface Transaction {
-  id: string
-  description: string
-  amount: number
-  type: 'income' | 'expense'
-  date: string
-  category: string
-}
+import type { DashboardStats, Transaction } from '@/types'
 
 export default function DashboardPage() {
   const { session } = useAuth()
@@ -163,7 +145,7 @@ export default function DashboardPage() {
       name: 'Aktif Hesap',
       value: stats.activeAccounts.toString(),
       change: '0',
-      changeType: 'neutral',
+      changeType: 'neutral' as const,
       icon: WalletIcon,
     },
   ]

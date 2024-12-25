@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useAuth } from '@/hooks/use-auth'
 import {
   UserIcon,
-  KeyIcon,
   BellIcon,
   ShieldCheckIcon,
 } from '@heroicons/react/24/outline'
